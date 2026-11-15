@@ -1,72 +1,128 @@
 [gd_scene format=3 uid="uid://qet1tfjqc86l"]
 
 [ext_resource type="Script" uid="uid://dvh2wo2jrhdns" path="res://scenes/game/marcian_base.gd" id="1_2ranv"]
-[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="2_04bv8"]
 [ext_resource type="Texture2D" uid="uid://fflg2061r8h2" path="res://assets/base.jpeg" id="2_ilgik"]
 [ext_resource type="Script" uid="uid://juqd5ky011qu" path="res://scenes/zonas/button.gd" id="3_04bv8"]
+[ext_resource type="Texture2D" uid="uid://o7lkq6v2444u" path="res://assets/Boton ENERGY.png" id="4_eo8wu"]
 [ext_resource type="PackedScene" uid="uid://cvx2gkrfttrm7" path="res://scenes/zonas/energy_zone.tscn" id="4_wluxo"]
+[ext_resource type="Texture2D" uid="uid://kpacsomq7smw" path="res://assets/Boton PAUSE (1).png" id="5_5geyc"]
+[ext_resource type="Texture2D" uid="uid://bybqhtvwibuug" path="res://assets/Boton LAB (1).png" id="5_eo8wu"]
 [ext_resource type="PackedScene" uid="uid://c4obl0wbd3jhb" path="res://scenes/zonas/LabZone.tscn" id="5_gdw00"]
 [ext_resource type="PackedScene" uid="uid://6asxyfmao2ts" path="res://scenes/zonas/StatusZone.tscn" id="6_ilgik"]
+[ext_resource type="Texture2D" uid="uid://cwu7c7qwhg8fp" path="res://assets/Boton OP.png" id="6_o7iar"]
+[ext_resource type="Texture2D" uid="uid://qkklcjpmdbjj" path="res://assets/Boton LIFE SUPPORT.png" id="7_ao18i"]
 [ext_resource type="PackedScene" uid="uid://c8nxg7trqpdqr" path="res://scenes/zonas/OpZone.tscn" id="7_eo8wu"]
 
-[node name="marcian_base" type="Node2D" unique_id=688795111 node_paths=PackedStringArray("camera", "zones")]
+[node name="marcian_base" type="Node2D" unique_id=688795111 node_paths=PackedStringArray("timer", "zones")]
 script = ExtResource("1_2ranv")
-camera = NodePath("")
-zones = [NodePath("EnergyZone"), NodePath("LabZone"), NodePath("StatusZone"), NodePath("OpZone")]
+timer = NodePath("Timer")
+zones = [NodePath("SubViewportContainer/SubViewport/EnergyZone"), NodePath("SubViewportContainer/SubViewport/LabZone"), NodePath("SubViewportContainer/SubViewport/StatusZone"), NodePath("SubViewportContainer/SubViewport/OpZone")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1933517404]
-position = Vector2(837.50006, 470.75)
-scale = Vector2(1.0418749, 1.0531915)
+[node name="Background" type="Sprite2D" parent="." unique_id=1933517404]
+position = Vector2(836, 470.75)
+scale = Vector2(1.04375, 1.0531915)
 texture = ExtResource("2_ilgik")
 
 [node name="Button_ez" type="Button" parent="." unique_id=979363982]
-show_behind_parent = true
-offset_left = 463.0
-offset_top = 741.0
-offset_right = 835.0
-offset_bottom = 888.0
-text = "energy"
-icon = ExtResource("2_04bv8")
+offset_left = 577.0
+offset_top = 800.0
+offset_right = 677.0
+offset_bottom = 849.0
 script = ExtResource("3_04bv8")
+
+[node name="TextureRect" type="TextureRect" parent="Button_ez" unique_id=1854869935]
+layout_mode = 0
+offset_left = -109.0
+offset_top = -35.0
+offset_right = 256.0
+offset_bottom = 89.0
+texture = ExtResource("4_eo8wu")
+
+[node name="Button_pause" type="Button" parent="." unique_id=541291919]
+offset_left = 1515.0
+offset_top = 53.0
+offset_right = 1548.0
+offset_bottom = 83.0
+script = ExtResource("3_04bv8")
+
+[node name="TextureRect" type="TextureRect" parent="Button_pause" unique_id=582844565]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -21.0
+offset_right = 76.0
+offset_bottom = 64.0
+texture = ExtResource("5_5geyc")
 
 [node name="Button_op" type="Button" parent="." unique_id=917969789]
-offset_left = 1325.0
-offset_top = 754.0
-offset_right = 1485.0
-offset_bottom = 890.0
-text = "op"
-icon = ExtResource("2_04bv8")
+offset_left = 1372.0
+offset_top = 799.0
+offset_right = 1442.0
+offset_bottom = 855.0
 script = ExtResource("3_04bv8")
+
+[node name="TextureRect" type="TextureRect" parent="Button_op" unique_id=115004262]
+layout_mode = 0
+offset_left = -161.0
+offset_top = -33.0
+offset_right = 214.0
+offset_bottom = 93.0
+texture = ExtResource("6_o7iar")
 
 [node name="Button_hp" type="Button" parent="." unique_id=153305589]
-offset_left = 975.0
-offset_top = 753.0
-offset_right = 1136.0
-offset_bottom = 889.0
-text = "hp"
-icon = ExtResource("2_04bv8")
+offset_left = 926.0
+offset_top = 789.0
+offset_right = 1099.0
+offset_bottom = 860.0
 script = ExtResource("3_04bv8")
+
+[node name="TextureRect" type="TextureRect" parent="Button_hp" unique_id=616785930]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -22.0
+offset_right = 277.0
+offset_bottom = 101.0
+texture = ExtResource("7_ao18i")
 
 [node name="Button_lab" type="Button" parent="." unique_id=428753501]
-offset_left = 152.0
-offset_top = 735.0
-offset_right = 316.0
-offset_bottom = 871.0
-text = "lab"
-icon = ExtResource("2_04bv8")
+offset_left = 238.0
+offset_top = 800.0
+offset_right = 305.0
+offset_bottom = 842.0
 script = ExtResource("3_04bv8")
 
-[node name="EnergyZone" parent="." unique_id=49999745 instance=ExtResource("4_wluxo")]
+[node name="TextureRect" type="TextureRect" parent="Button_lab" unique_id=839651990]
+layout_mode = 0
+offset_left = -143.0
+offset_top = -32.0
+offset_right = 223.0
+offset_bottom = 91.0
+texture = ExtResource("5_eo8wu")
 
-[node name="LabZone" parent="." unique_id=1433983092 instance=ExtResource("5_gdw00")]
+[node name="Timer" type="Timer" parent="." unique_id=259415959]
 
-[node name="StatusZone" parent="." unique_id=1892277350 instance=ExtResource("6_ilgik")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1959983785]
+offset_left = 72.0
+offset_top = 160.0
+offset_right = 1597.0
+offset_bottom = 745.0
 
-[node name="OpZone" parent="." unique_id=337943612 instance=ExtResource("7_eo8wu")]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=369161385]
+
+[node name="EnergyZone" parent="SubViewportContainer/SubViewport" unique_id=49999745 instance=ExtResource("4_wluxo")]
+position = Vector2(518, 432)
+
+[node name="OpZone" parent="SubViewportContainer/SubViewport" unique_id=337943612 instance=ExtResource("7_eo8wu")]
+
+[node name="LabZone" parent="SubViewportContainer/SubViewport" unique_id=1433983092 instance=ExtResource("5_gdw00")]
+
+[node name="StatusZone" parent="SubViewportContainer/SubViewport" unique_id=1892277350 instance=ExtResource("6_ilgik")]
 
 [connection signal="mouse_entered" from="Button_ez" to="Button_ez" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button_ez" to="Button_ez" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button_ez" to="." method="_on_button_ez_pressed"]
+[connection signal="mouse_entered" from="Button_pause" to="Button_pause" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button_pause" to="Button_pause" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button_pause" to="." method="_on_button_ez_pressed"]
 [connection signal="mouse_entered" from="Button_op" to="Button_op" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button_op" to="Button_op" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button_op" to="." method="_on_button_op_pressed"]
