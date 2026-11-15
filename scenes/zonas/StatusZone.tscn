@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6asxyfmao2ts"]
+
+[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="1_2i2gi"]
+
+[node name="StatusZone" type="Node2D" unique_id=1892277350]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1301723859]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(853, 525)
+texture = ExtResource("1_2i2gi")

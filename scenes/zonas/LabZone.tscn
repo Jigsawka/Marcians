@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c4obl0wbd3jhb"]
+
+[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="1_bymsy"]
+
+[node name="LabZone" type="Node2D" unique_id=1433983092]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943606217]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(859, 446)
+texture = ExtResource("1_bymsy")

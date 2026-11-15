@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://qet1tfjqc86l"]
+
+[ext_resource type="Script" uid="uid://dvh2wo2jrhdns" path="res://scenes/game/marcian_base.gd" id="1_2ranv"]
+[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="2_04bv8"]
+[ext_resource type="Texture2D" uid="uid://fflg2061r8h2" path="res://assets/base.jpeg" id="2_ilgik"]
+[ext_resource type="Script" uid="uid://juqd5ky011qu" path="res://scenes/zonas/button.gd" id="3_04bv8"]
+[ext_resource type="PackedScene" uid="uid://cvx2gkrfttrm7" path="res://scenes/zonas/energy_zone.tscn" id="4_wluxo"]
+[ext_resource type="PackedScene" uid="uid://c4obl0wbd3jhb" path="res://scenes/zonas/LabZone.tscn" id="5_gdw00"]
+[ext_resource type="PackedScene" uid="uid://6asxyfmao2ts" path="res://scenes/zonas/StatusZone.tscn" id="6_ilgik"]
+[ext_resource type="PackedScene" uid="uid://c8nxg7trqpdqr" path="res://scenes/zonas/OpZone.tscn" id="7_eo8wu"]
+
+[node name="marcian_base" type="Node2D" unique_id=688795111 node_paths=PackedStringArray("camera", "zones")]
+script = ExtResource("1_2ranv")
+camera = NodePath("")
+zones = [NodePath("EnergyZone"), NodePath("LabZone"), NodePath("StatusZone"), NodePath("OpZone")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1933517404]
+position = Vector2(837.50006, 470.75)
+scale = Vector2(1.0418749, 1.0531915)
+texture = ExtResource("2_ilgik")
+
+[node name="Button_ez" type="Button" parent="." unique_id=979363982]
+show_behind_parent = true
+offset_left = 463.0
+offset_top = 741.0
+offset_right = 835.0
+offset_bottom = 888.0
+text = "energy"
+icon = ExtResource("2_04bv8")
+script = ExtResource("3_04bv8")
+
+[node name="Button_op" type="Button" parent="." unique_id=917969789]
+offset_left = 1325.0
+offset_top = 754.0
+offset_right = 1485.0
+offset_bottom = 890.0
+text = "op"
+icon = ExtResource("2_04bv8")
+script = ExtResource("3_04bv8")
+
+[node name="Button_hp" type="Button" parent="." unique_id=153305589]
+offset_left = 975.0
+offset_top = 753.0
+offset_right = 1136.0
+offset_bottom = 889.0
+text = "hp"
+icon = ExtResource("2_04bv8")
+script = ExtResource("3_04bv8")
+
+[node name="Button_lab" type="Button" parent="." unique_id=428753501]
+offset_left = 152.0
+offset_top = 735.0
+offset_right = 316.0
+offset_bottom = 871.0
+text = "lab"
+icon = ExtResource("2_04bv8")
+script = ExtResource("3_04bv8")
+
+[node name="EnergyZone" parent="." unique_id=49999745 instance=ExtResource("4_wluxo")]
+
+[node name="LabZone" parent="." unique_id=1433983092 instance=ExtResource("5_gdw00")]
+
+[node name="StatusZone" parent="." unique_id=1892277350 instance=ExtResource("6_ilgik")]
+
+[node name="OpZone" parent="." unique_id=337943612 instance=ExtResource("7_eo8wu")]
+
+[connection signal="mouse_entered" from="Button_ez" to="Button_ez" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button_ez" to="Button_ez" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button_ez" to="." method="_on_button_ez_pressed"]
+[connection signal="mouse_entered" from="Button_op" to="Button_op" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button_op" to="Button_op" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button_op" to="." method="_on_button_op_pressed"]
+[connection signal="mouse_entered" from="Button_hp" to="Button_hp" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button_hp" to="Button_hp" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button_hp" to="." method="_on_button_hp_pressed"]
+[connection signal="mouse_entered" from="Button_lab" to="Button_lab" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button_lab" to="Button_lab" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button_lab" to="." method="_on_button_lab_pressed"]

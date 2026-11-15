@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cvx2gkrfttrm7"]
+
+[ext_resource type="Script" uid="uid://lebyvrgpoo7q" path="res://scenes/zonas/energy_zone.gd" id="1_nlwuk"]
+[ext_resource type="Texture2D" uid="uid://bjerpm05hnhxc" path="res://assets/images.jpeg" id="2_026pr"]
+[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="2_l30m2"]
+[ext_resource type="Script" uid="uid://juqd5ky011qu" path="res://scenes/zonas/button.gd" id="3_026pr"]
+
+[node name="EnergyZone" type="Node2D" unique_id=49999745]
+script = ExtResource("1_nlwuk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1481309072]
+position = Vector2(833.00006, 467)
+scale = Vector2(1.6364986, 1)
+texture = ExtResource("2_026pr")
+
+[node name="Button" type="Button" parent="." unique_id=182005140]
+offset_left = 1164.0
+offset_top = 493.0
+offset_right = 1300.0
+offset_bottom = 629.0
+icon = ExtResource("2_l30m2")
+script = ExtResource("3_026pr")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
