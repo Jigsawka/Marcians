@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_mouse_entered() -> void:
-	modulate = Color(1.0,1.0,0.0,1.0)
+	modulate = Color(0.0, 1.0, 0.0, 1.0)
 
 
 func _on_mouse_exited() -> void:
