@@ -27,8 +27,6 @@ GameManager="*uid://dn18rkmmsn4nu"
 
 [display]
 
-window/size/viewport_width=1672
-window/size/viewport_height=941
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
