@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://c4obl0wbd3jhb"]
 
+[ext_resource type="Script" uid="uid://cljskavm1dqyv" path="res://scenes/zonas/lab_zone.gd" id="1_463pe"]
 [ext_resource type="Texture2D" uid="uid://bpx65ehutvk6p" path="res://assets/botonrovers.jpeg" id="1_bymsy"]
 [ext_resource type="Script" uid="uid://dnca8r3y5o5fd" path="res://scenes/zonas/comunication.gd" id="2_px138"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0utyy"]
 font_size = 45
 
-[node name="LabZone" type="Control" unique_id=954937128]
+[node name="LabZone" type="Control" unique_id=954937128 node_paths=PackedStringArray("rover_container", "buttons")]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_463pe")
+rover_container = NodePath("GridContainer")
+buttons = [NodePath("Rovers"), NodePath("Experiments"), NodePath("Comunication")]
 
 [node name="Label" type="Label" parent="." unique_id=1883068150]
 layout_mode = 0
@@ -21,37 +25,48 @@ label_settings = SubResource("LabelSettings_0utyy")
 
 [node name="Comunication" type="Button" parent="." unique_id=1767073997]
 layout_mode = 0
-offset_left = -112.0
-offset_top = 322.0
-offset_right = 1480.0
-offset_bottom = 1002.0
+offset_left = -570.0
+offset_top = 332.0
+offset_right = 1022.0
+offset_bottom = 1012.0
 scale = Vector2(0.15, 0.15)
 icon = ExtResource("1_bymsy")
 script = ExtResource("2_px138")
 
 [node name="Experiments" type="Button" parent="." unique_id=600411097]
 layout_mode = 0
-offset_left = -114.0
-offset_top = 215.00002
-offset_right = 1478.0
-offset_bottom = 895.0
+offset_left = -572.0
+offset_top = 225.00002
+offset_right = 1020.0
+offset_bottom = 905.0
 scale = Vector2(0.15, 0.15)
 icon = ExtResource("1_bymsy")
 script = ExtResource("2_px138")
 
 [node name="Rovers" type="Button" parent="." unique_id=551478968]
 layout_mode = 0
-offset_left = -113.0
-offset_top = 109.0
-offset_right = 1479.0
-offset_bottom = 789.0
+offset_left = -571.0
+offset_top = 119.0
+offset_right = 1021.0
+offset_bottom = 799.0
 scale = Vector2(0.15, 0.15)
 icon = ExtResource("1_bymsy")
 script = ExtResource("2_px138")
 
+[node name="GridContainer" type="GridContainer" parent="." unique_id=966425130]
+layout_mode = 0
+offset_left = -122.0
+offset_top = 116.0
+offset_right = -82.0
+offset_bottom = 156.0
+theme_override_constants/h_separation = 100
+
 [connection signal="mouse_entered" from="Comunication" to="Comunication" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Comunication" to="Comunication" method="_on_mouse_exited"]
+[connection signal="pressed" from="Comunication" to="." method="_on_comunication_pressed"]
 [connection signal="mouse_entered" from="Experiments" to="Experiments" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Experiments" to="Experiments" method="_on_mouse_exited"]
+[connection signal="pressed" from="Experiments" to="." method="_on_experiments_pressed"]
 [connection signal="mouse_entered" from="Rovers" to="Rovers" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Rovers" to="Rovers" method="_on_mouse_exited"]
+[connection signal="pressed" from="Rovers" to="." method="_on_rovers_pressed"]

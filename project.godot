@@ -23,6 +23,7 @@ config/icon="res://assets/icon.svg"
 
 GameSetup="*res://scripts/game_setup.gd"
 Events="*uid://6tdtexi638ag"
+GameManager="*uid://dn18rkmmsn4nu"
 
 [display]
 

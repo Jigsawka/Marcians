@@ -93,7 +93,7 @@ script = ExtResource("3_04bv8")
 
 [node name="TextureRect" type="TextureRect" parent="Button_lab" unique_id=839651990]
 layout_mode = 0
-offset_left = -143.0
+offset_left = -150.0
 offset_top = -32.0
 offset_right = 223.0
 offset_bottom = 91.0
