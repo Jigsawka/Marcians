@@ -1,10 +1,57 @@
 [gd_scene format=3 uid="uid://c4obl0wbd3jhb"]
 
-[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="1_bymsy"]
+[ext_resource type="Texture2D" uid="uid://bpx65ehutvk6p" path="res://assets/botonrovers.jpeg" id="1_bymsy"]
+[ext_resource type="Script" uid="uid://dnca8r3y5o5fd" path="res://scenes/zonas/comunication.gd" id="2_px138"]
 
-[node name="LabZone" type="Node2D" unique_id=1433983092]
+[sub_resource type="LabelSettings" id="LabelSettings_0utyy"]
+font_size = 45
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=943606217]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(859, 446)
-texture = ExtResource("1_bymsy")
+[node name="LabZone" type="Control" unique_id=954937128]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="." unique_id=1883068150]
+layout_mode = 0
+offset_left = -122.0
+offset_top = -33.0
+offset_right = 136.0
+offset_bottom = 30.0
+text = "Laboratorio"
+label_settings = SubResource("LabelSettings_0utyy")
+
+[node name="Comunication" type="Button" parent="." unique_id=1767073997]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 322.0
+offset_right = 1480.0
+offset_bottom = 1002.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("1_bymsy")
+script = ExtResource("2_px138")
+
+[node name="Experiments" type="Button" parent="." unique_id=600411097]
+layout_mode = 0
+offset_left = -114.0
+offset_top = 215.00002
+offset_right = 1478.0
+offset_bottom = 895.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("1_bymsy")
+script = ExtResource("2_px138")
+
+[node name="Rovers" type="Button" parent="." unique_id=551478968]
+layout_mode = 0
+offset_left = -113.0
+offset_top = 109.0
+offset_right = 1479.0
+offset_bottom = 789.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("1_bymsy")
+script = ExtResource("2_px138")
+
+[connection signal="mouse_entered" from="Comunication" to="Comunication" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Comunication" to="Comunication" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Experiments" to="Experiments" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Experiments" to="Experiments" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Rovers" to="Rovers" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Rovers" to="Rovers" method="_on_mouse_exited"]

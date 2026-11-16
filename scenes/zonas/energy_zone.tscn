@@ -5,13 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="2_l30m2"]
 [ext_resource type="Script" uid="uid://juqd5ky011qu" path="res://scenes/zonas/button.gd" id="3_026pr"]
 
-[node name="EnergyZone" type="Node2D" unique_id=49999745]
+[node name="EnergyZone" type="Control" unique_id=894865679]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_nlwuk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1481309072]
 texture = ExtResource("2_026pr")
 
 [node name="Button" type="Button" parent="." unique_id=182005140]
+layout_mode = 0
 offset_left = -76.0
 offset_top = -60.0
 offset_right = 60.0

@@ -1,4 +1,4 @@
-extends Node2D
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,5 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:
-	pass
+func _on_mouse_entered() -> void:
+	modulate = Color(0.0, 1.0, 0.0, 1.0)
+
+
+func _on_mouse_exited() -> void:
+	modulate = Color(1.0,1.0,1.0,1.0)

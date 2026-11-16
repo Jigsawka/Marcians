@@ -12,17 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cwu7c7qwhg8fp" path="res://assets/Boton OP.png" id="6_o7iar"]
 [ext_resource type="Texture2D" uid="uid://qkklcjpmdbjj" path="res://assets/Boton LIFE SUPPORT.png" id="7_ao18i"]
 [ext_resource type="PackedScene" uid="uid://c8nxg7trqpdqr" path="res://scenes/zonas/OpZone.tscn" id="7_eo8wu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouxqx"]
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[ext_resource type="Script" uid="uid://bqd2rcu1lee61" path="res://scenes/zonas/energy_zone.gd" id="12_ao18i"]
 
 [node name="marcian_base" type="Node2D" unique_id=688795111 node_paths=PackedStringArray("timer", "zones")]
 script = ExtResource("1_2ranv")
 timer = NodePath("Timer")
-zones = [NodePath("Panel/SubViewportContainer/SubViewport/EnergyZone"), NodePath("Panel/SubViewportContainer/SubViewport/LabZone"), NodePath("Panel/SubViewportContainer/SubViewport/StatusZone"), NodePath("Panel/SubViewportContainer/SubViewport/OpZone")]
+zones = [NodePath("EnergyZone"), NodePath("LabZone"), NodePath("StatusZone"), NodePath("OpZone")]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1933517404]
 position = Vector2(835.9999, 470.5)
@@ -106,30 +101,18 @@ texture = ExtResource("5_eo8wu")
 
 [node name="Timer" type="Timer" parent="." unique_id=259415959]
 
-[node name="Panel" type="Panel" parent="." unique_id=265356691]
-clip_children = 1
-offset_left = 73.0
-offset_top = 158.0
-offset_right = 1599.0
-offset_bottom = 752.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ouxqx")
+[node name="OpZone" parent="." unique_id=337943612 instance=ExtResource("7_eo8wu")]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel" unique_id=1959983785]
-layout_mode = 0
-stretch = true
+[node name="StatusZone" parent="." unique_id=1892277350 instance=ExtResource("6_ilgik")]
 
-[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer" unique_id=369161385]
-handle_input_locally = false
-size = Vector2i(2, 2)
-render_target_update_mode = 4
+[node name="EnergyZone" parent="." unique_id=49999745 instance=ExtResource("4_wluxo")]
+script = ExtResource("12_ao18i")
 
-[node name="OpZone" parent="Panel/SubViewportContainer/SubViewport" unique_id=337943612 instance=ExtResource("7_eo8wu")]
-
-[node name="LabZone" parent="Panel/SubViewportContainer/SubViewport" unique_id=1433983092 instance=ExtResource("5_gdw00")]
-
-[node name="StatusZone" parent="Panel/SubViewportContainer/SubViewport" unique_id=1892277350 instance=ExtResource("6_ilgik")]
-
-[node name="EnergyZone" parent="Panel/SubViewportContainer/SubViewport" unique_id=49999745 instance=ExtResource("4_wluxo")]
+[node name="LabZone" parent="." unique_id=1433983092 instance=ExtResource("5_gdw00")]
+offset_left = 827.0
+offset_top = 199.0
+offset_right = 827.0
+offset_bottom = 199.0
 
 [connection signal="mouse_entered" from="Button_ez" to="Button_ez" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button_ez" to="Button_ez" method="_on_mouse_exited"]

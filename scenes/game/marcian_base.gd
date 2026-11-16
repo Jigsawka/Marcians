@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var timer: Timer
-@export var zones: Array[Node2D]
+@export var zones: Array[Control]
 
 @export var camera_zoom: Vector2 = Vector2(1, 1)
 @export var use_limits: bool = true

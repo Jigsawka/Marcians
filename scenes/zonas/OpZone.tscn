@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://assets/icon.svg" id="1_nurri"]
 
-[node name="OpZone" type="Node2D" unique_id=337943612]
+[node name="OpZone" type="Control" unique_id=174677897]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1107923039]
 modulate = Color(0, 1, 1, 1)
