@@ -1,6 +1,7 @@
 extends Control
 
 @export var menu_scene: PackedScene = load("res://scenes/main_menu/main_menu.tscn")
+signal back_main_menu
 
 @export_category("Referencias de Nodos")
 @export var first_button_path: NodePath
@@ -14,10 +15,14 @@ func _ready() -> void:
 
 func _on_main_menu_pressed() -> void:
 	print("Volviendo al menú...")
-	get_tree().change_scene_to_packed(menu_scene)
+	back_main_menu.emit()
 
 func _on_downSound_pressed() -> void:
 	print("Subiendo volumen...")
 
 func _on_upSound_pressed() -> void:
 	print("Bajando volumen...")
+
+
+func _on_button_back_pressed() -> void:
+	pass # Replace with function body.

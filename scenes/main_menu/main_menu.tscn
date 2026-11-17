@@ -1,6 +1,36 @@
 [gd_scene format=3 uid="uid://bll6kv8ingfnf"]
 
-[ext_resource type="Script" uid="uid://dvflei3smpvw6" path="res://scenes/main_menu/main_menu.gd" id="1"]
+[ext_resource type="Script" uid="uid://dvflei3smpvw6" path="res://scripts/main_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bt0640lr7c052" path="res://assets/main_menu/Menú principal de Marte con rover sonriente.png" id="2_uqeha"]
+[ext_resource type="Script" uid="uid://mhqargy5uwvg" path="res://scenes/main_menu/boton_nueva_partida.gd" id="3_ob46e"]
+[ext_resource type="Texture2D" uid="uid://ctaakf650506q" path="res://assets/main_menu/Boton NEW GAME.png" id="3_wem23"]
+[ext_resource type="Texture2D" uid="uid://dgrmosc2top60" path="res://assets/main_menu/Boton OPTIONS.png" id="5_3ovsr"]
+[ext_resource type="Texture2D" uid="uid://drhli2vt8bjc0" path="res://assets/main_menu/Boton QUIT.png" id="6_5seab"]
+[ext_resource type="PackedScene" uid="uid://c1tbnv34fylp2" path="res://scenes/settings/settings.tscn" id="7_5seab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ob46e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4kts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_klkup"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqeha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wem23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ovsr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xg86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thkx5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2yjq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lqpn7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qel0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tt6xx"]
 
 [node name="MainMenu" type="Control" unique_id=271882474]
 layout_mode = 3
@@ -10,3 +40,83 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+
+[node name="main_music" type="AudioStreamPlayer2D" parent="." unique_id=451394577]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1503911846]
+position = Vector2(836, 470)
+texture = ExtResource("2_uqeha")
+
+[node name="Botones" type="Control" parent="." unique_id=521273438]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nueva_partida" type="Button" parent="Botones" unique_id=1863856243]
+light_mask = 0
+layout_mode = 0
+offset_left = 448.0
+offset_top = 321.0
+offset_right = 1233.0
+offset_bottom = 518.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ob46e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f4kts")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_klkup")
+icon = ExtResource("3_wem23")
+script = ExtResource("3_ob46e")
+
+[node name="options" type="Button" parent="Botones" unique_id=983523499]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 516.0
+offset_right = 1237.0
+offset_bottom = 696.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uqeha")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wem23")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3ovsr")
+icon = ExtResource("5_3ovsr")
+script = ExtResource("3_ob46e")
+
+[node name="quit" type="Button" parent="Botones" unique_id=268735161]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 695.0
+offset_right = 1199.0
+offset_bottom = 870.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xg86")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_thkx5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x2yjq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lqpn7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qel0l")
+icon = ExtResource("6_5seab")
+script = ExtResource("3_ob46e")
+
+[node name="Panel" type="Panel" parent="." unique_id=457619301]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -320.0
+offset_right = 650.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tt6xx")
+
+[node name="Settings" parent="Panel" unique_id=23494223 instance=ExtResource("7_5seab")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="Botones/nueva_partida" to="Botones/nueva_partida" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Botones/nueva_partida" to="Botones/nueva_partida" method="_on_mouse_exited"]
+[connection signal="pressed" from="Botones/nueva_partida" to="." method="_on_new_game_pressed"]
+[connection signal="mouse_entered" from="Botones/options" to="Botones/options" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Botones/options" to="Botones/options" method="_on_mouse_exited"]
+[connection signal="pressed" from="Botones/options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="Botones/quit" to="Botones/quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Botones/quit" to="Botones/quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Botones/quit" to="." method="_on_quit_pressed"]
+[connection signal="back_main_menu" from="Panel/Settings" to="." method="_on_settings_back_main_menu"]

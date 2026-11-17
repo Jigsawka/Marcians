@@ -8,5 +8,5 @@ anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1107923039]
 modulate = Color(0, 1, 1, 1)
-position = Vector2(817, 592)
+position = Vector2(593, 354)
 texture = ExtResource("1_nurri")
