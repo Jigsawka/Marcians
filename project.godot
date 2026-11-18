@@ -19,25 +19,16 @@ run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
-[autoload]
-
-GameSetup="*res://scripts/game_setup.gd"
-Events="*uid://6tdtexi638ag"
-GameManager="*uid://dn18rkmmsn4nu"
-
 [display]
 
-window/size/viewport_width=1672
-window/size/viewport_height=941
-window/size/window_width_override=1152
-window/size/window_height_override=648
-window/stretch/mode="canvas_items"
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
 
 [file_customization]
 
 folder_colors={
-"res://scenes/": "orange",
-"res://scripts/": "green"
+"res://scenes/": "orange"
 }
 
 [physics]

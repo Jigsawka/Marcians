@@ -55,10 +55,10 @@ script = ExtResource("2_px138")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=966425130]
 layout_mode = 0
-offset_left = -122.0
-offset_top = 116.0
-offset_right = -82.0
-offset_bottom = 156.0
+offset_left = -134.0
+offset_top = 119.0
+offset_right = -94.0
+offset_bottom = 159.0
 theme_override_constants/h_separation = 100
 
 [connection signal="mouse_entered" from="Comunication" to="Comunication" method="_on_mouse_entered"]

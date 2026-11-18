@@ -3,7 +3,7 @@ extends Control
 @onready var audio_player: AudioStreamPlayer2D = $main_music
 @onready var panel_opciones = $Panel
 
-const PREGAME_SCENE := "res://scenes/pregame/pregame.tscn"
+const PREGAME_SCENE := "res://scenes/Game/Marcian_base.tscn"
 const SETTINGS_SCENE := "res://scenes/settings/settings.tscn"
 
 func _ready() -> void:
@@ -14,7 +14,6 @@ func _ready() -> void:
 	audio_player.play()
 
 func _on_new_game_pressed() -> void:
-	GameSetup.reset_selection()
 	get_tree().change_scene_to_file(PREGAME_SCENE)
 
 func _on_options_pressed() -> void:
